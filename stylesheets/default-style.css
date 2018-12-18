@@ -1,0 +1,140 @@
+/* Default CSS for Project */
+/*
+COLOR PALETTE:
+
+Background: #23272a
+2nd Background: #676e77
+3rd Background: #2c2f33
+3rd Background (input): #4f555c
+
+Text: #ffffff
+Highlight: #99aab5
+Accent: #4e7498
+*/
+
+/* BACKGROUND */
+body {
+  background-color: #23272a;
+  color: #ffffff;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+div{
+  background-color: #4e7498;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 1px;
+}
+
+#main{
+  background-color: #2c2f33;
+  margin: 0px;
+  padding: 10px 10px 10px 10px;
+}
+
+#SideView{
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  width: 15%;
+  float: left;
+}
+
+#MainView{
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  width: 85%;
+  float: right;
+}
+
+#Menu{
+  background-color: #2c2f33;
+  height: 100%;
+  margin: 5px 10px 5px 0px;
+  text-transform: uppercase;
+}
+
+ul{
+  padding-left: 0px;
+  list-style: none;
+}
+
+li{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 0px 10px 3px;
+  border-bottom: 2px solid #4e7498;
+}
+
+li:hover{
+  background-color: #23272a;
+  color: #ffffff;
+}
+
+li:last-child{
+  border: none;
+}
+
+fieldset{
+  background-color: #2c2f33;
+  border-color: transparent;
+  margin: 2px;
+}
+
+input{
+  background-color: #4f555c;
+  border-color: #4f555c;
+  border: 0px;
+  padding: 10px 5px 10px 5px;
+}
+
+input::placeholder{
+  color: #99aab5;
+}
+
+input[type=text]{
+  color: #ffffff;
+}
+
+input[type=text]:focus{
+  color: #ffffff;
+  background-color: #23272a;
+  border-color: #4e7498;
+}
+
+input[type=submit]{
+  background-color: #4f555c;
+  color: #99aab5;
+}
+
+input[type=submit]:hover{
+  background-color: #23272a;
+  color: #99aab5;
+}
+
+
+/* TEXT */
+h1 {
+  color: #ffffff;
+  margin: 5px;
+}
+
+h2 {
+  color: #99aab5
+  margin: 5px;
+}
+
+h3{
+  color: #99aab5;
+  margin: 3px 0px 3px 0px;
+}
+
+a{
+  color: #99aab5;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ffffff;
+}

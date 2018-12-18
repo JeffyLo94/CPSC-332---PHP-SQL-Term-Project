@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Created on 12/2018 by Jeffrey Lo, Steven Duong, Angel Soto -->
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheets\default-style.css">
+</head>
+
+<body>
+
+	<div id="main">
+		<h1>CPSC 332 PROJECT - University DB</h1>
+		<h3 style="margin: 5px;">By: Steven Duong, Jeffrey Lo, Angel Soto </h2>
+	</div>
+
+	<div id="SideView">
+		<!-- Will add script to show/hide views if time allows otherwise, delete-->
+		<div id="Menu">
+			<ul>
+				<li><a href="#Admin">Professor Lookup</a></li>
+				<li><a href="#Student">Student Lookup</a></li>
+				<li><a href="#About">ReadMe</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="MainView">
+		<!-- NOTE: The forms in these sections are examples! -->
+		<h1>NOTE: These are examples - remove this later </h1>
+		<!-- ADMIN SECITON -->
+		<div id="Admin">
+			<form action="php\profLookup.php" method="POST">
+					<fieldset>
+						<h3>Admin/Professor Use</h4>
+
+						<b><br>Professor Lookup<br></b>
+						 <input type="text" name="pssn" placeholder="Enter Prof. SSN (no dashes):"/>
+						<input type="submit" />
+			</form>
+
+			<form action="php\gradeCount.php" method="POST">
+				<b><br>Student and Grade Count<br></b>
+				<input type="text" name="courseNumber" placeholder="Enter Course #"> and <input type="text" name="sectionNumber" placeholder="Enter Student #">
+				<input type="submit" value="Submit">
+				</fieldset>
+			</form>
+		</div>
+
+		<!-- STUDENT SECITON -->
+		<div id="Student">
+			<form action="php\courseLookup.php" method="POST">
+					<fieldset>
+						<h3>Student Use</h4>
+
+						<b><br>Course Look-up<br></b>
+						<input type="text" name="courseNumber" placeholder="Enter Course #"/>
+						<input type="submit" />
+			</form>
+
+			<form action="php\studentLookup.php" method="POST">
+				<b><br>Student Record<br></b>
+				<input type="text" name="studentCWID" placeholder="Enter Student CWID" />
+				<input type="submit" />
+				</fieldset>
+			</form>
+		</div>
+
+	</div>
+</body>
+
+</html>
