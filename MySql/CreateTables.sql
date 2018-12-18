@@ -12,8 +12,16 @@ CREATE TABLE PROFESSOR
 	Professor_Sex enum('M', 'F') not null,
 	Professor_Title enum('Dr.', 'Mr.', 'Ms.', 'Mrs.') not null,
 	Professor_Salary numeric(6) not null,
-  Professor_Degree varchar(25) not null,
 	primary key(Professor_SSN)
+);
+
+CREATE TABLE DEGREE
+(
+	Degree_Owner_SSN numeric(9) not null,
+	Degree_Name varchar(25) not null,
+	Degree_School varChar(30) not null,
+	primary key(Degree_Owner_SSN, Degree_Name),
+	foreign key(Degree_Owner_SSN) references PROFESSOR(Professor_SSN)
 );
 
 CREATE TABLE DEPARTMENT
@@ -56,11 +64,18 @@ CREATE TABLE STUDENT
 	Student_Address varchar(60) not null,
 	Student_Phone numeric(10) not null,
 	Major numeric(5) not null,
-  Minor numeric(5) not null,
 	primary key(Student_CWID),
 	foreign key(Major) references DEPARTMENT(Department_Number)
 );
 
+CREATE TABLE MINOR
+(
+	Minor_Dept numeric(5) not null,
+	Minor_Student_CWID numeric(10) not null,
+	primary key(Minor_Dept, Minor_Student_CWID),
+	foreign key(Minor_Student_CWID) references STUDENT(Student_CWID),
+	foreign key(Minor_Dept) references DEPARTMENT(Department_Number)
+);
 
 CREATE TABLE SECTION
 (
