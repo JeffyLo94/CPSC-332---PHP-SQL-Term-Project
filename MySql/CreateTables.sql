@@ -1,4 +1,4 @@
-/* Create Tables for SQL here */
+/* Create Tables*/
 CREATE TABLE PROFESSOR
 (
 	Professor_SSN numeric(9) not null,
@@ -46,7 +46,6 @@ CREATE TABLE COURSE
 	foreign key(Course_Department_Number) references DEPARTMENT(Department_Number)
 );
 
-/* NOTE: this wasn't in the relational model, but is in the ER Schema */
 CREATE TABLE PREREQUISITE
 (
 	Course_Id varchar(10) not null,
@@ -81,7 +80,7 @@ CREATE TABLE SECTION
 (
 	Section_Number numeric(5) not null,
 	Section_Course_Number varchar(10) not null,
-	Section_Professor_SSN numeric(9) not null, /* Don't need a seperate PSSN teaches, since we already assigned a professor */
+	Section_Professor_SSN numeric(9) not null,
 	Classroom varchar(10) not null,
 	Meeting_Days char(7) not null,
 	Beg_Time varchar(10) not null,
@@ -92,7 +91,6 @@ CREATE TABLE SECTION
 	foreign key(Section_Professor_SSN) references PROFESSOR(Professor_SSN)
 );
 
-/* Didn't have any course enrollment? I've moved "Course_number_has" into this enrollment model */
 CREATE TABLE ENROLLMENT
 (
 	Enrollment_CWID numeric(10) not null,

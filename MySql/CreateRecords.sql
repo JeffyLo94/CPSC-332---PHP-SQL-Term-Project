@@ -1,5 +1,5 @@
 /* Add Records here */
-/* 3 PROFESSORS */
+/* 3 - PROFESSORS */
 INSERT INTO PROFESSOR(Professor_SSN, Professor_Name, Professor_Street, Professor_City, Professor_State, Professor_Zip, Professor_Phone_Area, Professor_Phone_Number, Professor_Sex, Professor_Title, Professor_Salary)
 VALUES (000000001, "Shawn Wang ", "800 N State College Blvd", "Fullerton", "CA", 92831, 714, 8881235, 'M', "Dr.", 120120);
 
@@ -41,7 +41,7 @@ INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (123456789, "BA Mathematics", "UC Berkley");
 
 
-/* 2 Departments */
+/* 2 - Departments */
 INSERT INTO DEPARTMENT(Department_Number, Department_Name, Department_Phone, Department_Location, Department_Chair_Person)
 VALUES (00001, "Computer Science", 6572783700, "CS-522", 000000002);
 
@@ -49,7 +49,7 @@ INSERT INTO DEPARTMENT(Department_Number, Department_Name, Department_Phone, Dep
 VALUES (00002, "Computer Engineering", 6572785987, "E-100G", 123456789);
 
 
-/* Courses */
+/* 4 - Courses */
 INSERT INTO COURSE(Course_Department_Number, Course_Number, Course_Title, Course_Textbook, Course_Units)
 VALUES (00001, "CPSC-332", "File Structures and Database Systems", "Fundamentals of Database Systems, 7th Edition", 3);
 
@@ -77,7 +77,7 @@ INSERT INTO PREREQUISITE(Course_Id, Prereq_Course)
 VALUES ("CPSC-481", "CPSC-335");
 
 
-/* SECTIONS */
+/* 6 - SECTIONS */
 INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (13321, "CPSC-332", 000000001, "E-202", "MW", "12:30pm", "1:45pm", 50);
 
@@ -96,6 +96,7 @@ VALUES (23111, "EGCP-311", 123456789, "E-302", "TTh", "10:00am", "11:15am", 30);
 INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (23112, "EGCP-311", 123456789, "E-302", "TTh", "12:00pm", "1:15pm", 30);
 
+/* 10 - Students */
 /* CS Students */
 INSERT INTO STUDENT(Student_CWID, Student_FName, Student_LName, Student_Address, Student_Phone, Major)
 VALUES (9494949494, "Jeffrey", "Lo", "101 Nutwood Ave. Fullerton, CA 92831", 9491011207, 00001);
@@ -150,7 +151,7 @@ INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00001, 1234554321);
 
 
-/* Enrollment */
+/* 30 - Enrollment */
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (9494949494, 13321, "CPSC-332", 'B');
 
