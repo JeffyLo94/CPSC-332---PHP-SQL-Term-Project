@@ -14,7 +14,7 @@ Add php sql calls here:
 
   <div id="main">
     <h1>CPSC 332 PROJECT - University DB</h1>
-    <h2>by: Jeffrey Lo, James Duong, Angel Soto</h2>
+    <h2>by: Jeffrey Lo, Duong Duong, Angel Soto</h2>
   </div>
   <div>
     <fieldset>
@@ -26,6 +26,8 @@ Add php sql calls here:
         $serverDB = mysql_connect('ecsmysql', SERVERID, PWD);
         if (!$serverDB) {
           die('Failed to connect: ' . mysql_error());
+        } elseif ($_POST["studentCWID"] == "") {
+          die('No CWID Provided');
         }
 
         //echo 'Connected successfully<p>';

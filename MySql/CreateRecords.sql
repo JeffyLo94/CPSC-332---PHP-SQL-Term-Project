@@ -93,6 +93,8 @@ VALUES (14811, "CPSC-481", 000000002, "CS-110", "TTh", "11:30am", "12:15pm", 40)
 INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (23111, "EGCP-311", 123456789, "E-302", "TTh", "10:00am", "11:15am", 30);
 
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
+VALUES (23112, "EGCP-311", 123456789, "E-302", "TTh", "12:00pm", "1:15pm", 30);
 
 /* CS Students */
 INSERT INTO STUDENT(Student_CWID, Student_FName, Student_LName, Student_Address, Student_Phone, Major)

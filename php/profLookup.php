@@ -16,10 +16,10 @@ Add php sql calls here:
 
 	<div id="main">
     <h1>CPSC 332 PROJECT - University DB</h1>
-    <h2>by: Jeffrey Lo, James Duong, Angel Soto</h2>
-    </div>
+    <h2>by: Jeffrey Lo, Duong Duong, Angel Soto</h2>
+  </div>
 
-    <div>
+  <div>
     <fieldset>
       <?php
         define("SERVERID", 'cs332a44');
@@ -28,6 +28,8 @@ Add php sql calls here:
         $serverDB = mysql_connect('ecsmysql', SERVERID, PWD);
         if (!$serverDB) {
           die('Failed to connect: ' . mysql_error());
+        } elseif ($_POST["professorSSN"] == ""){
+          die('NO Professor SSN Provided');
         }
 
          //echo 'Connected successfully<p>';
@@ -38,14 +40,14 @@ Add php sql calls here:
 
         $FindProf = "SELECT Professor_Title, Professor_Name, Classroom, Meeting_Days, Beg_Time, End_Time
         			FROM PROFESSOR, SECTION
-        			WHERE Section_Professor_SSN = Professor_SSN"
-        			AND Professor_SSN = " .$_POST["professorSSN"]";
+        			WHERE Section_Professor_SSN = Professor_SSN
+        			AND Professor_SSN =" .$_POST["professorSSN"];
         $profResult = mysql_query($FindProf, $serverDB) or die(mysql_error());
         $i=0;
         if ($i<mysql_numrows($profResult)){
         	//Print  Prof Schedule
         	echo "<div class ='query'>";
-        	for($i=0; $i<mysql_numrows($profResult); i++){
+        	for($i=0; $i<mysql_numrows($profResult); $i++){
         		echo "Name: ", mysql_result($profResult, $i, Professor_Title), mysql_result($profResult, $i, Professor_Name), "<BR>";
         		echo "Classrooms: ", mysql_result($profResult, $i, Classroom), "<BR>";
         		echo "Meeting Days: ", mysql_result($profResult, $i, Meeting_Days), "<BR>";
@@ -62,9 +64,9 @@ Add php sql calls here:
         }
         //close databse
         mysql_close($serverDB);
-        ?>
+      ?>
     </fieldset>
-</div>
+  </div>
 
 
   <div class="btnHolder">

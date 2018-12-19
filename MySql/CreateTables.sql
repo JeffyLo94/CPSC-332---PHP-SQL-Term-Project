@@ -87,7 +87,7 @@ CREATE TABLE SECTION
 	Beg_Time varchar(10) not null,
 	End_Time varchar(10) not null,
 	Seats numeric(3) not null,
-	primary key(Section_Number, Section_Course_Number, Section_Professor_SSN),
+	primary key(Section_Number, Section_Course_Number),
 	foreign key(Section_Course_Number) references COURSE(Course_Number),
 	foreign key(Section_Professor_SSN) references PROFESSOR(Professor_SSN)
 );

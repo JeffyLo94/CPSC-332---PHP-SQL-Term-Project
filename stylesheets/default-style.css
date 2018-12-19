@@ -41,9 +41,29 @@ div{
   padding: 10px 10px 10px 10px;
 }
 
+#Welcome{
+  background-color: #2c2f33;
+  border: 3px solid #4e7498;
+  text-align: center;
+}
+
+#Admin{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+#Student{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
 #SideView{
   background-color: transparent;
-  margin: 0px;
+  margin: 15px 0px 15px 0px;
   padding: 0px;
   width: 15%;
   float: left;
@@ -76,7 +96,7 @@ li{
   border-bottom: 2px solid #4e7498;
 }
 
-li:hover{
+li:hover, li:focus{
   background-color: #23272a;
   color: #ffffff;
 }
@@ -174,6 +194,66 @@ a{
   display: block;
 }
 
-a:hover{
-  color: #ffffff;
+a:hover, a:focus{
+  color: #ffffff!important;
+}
+
+
+/* Arrow Pointer Affect - HomePage */
+#arrowAnim {
+  /* width: 100vw; */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+#arrowAnim div {
+  background-color: transparent;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  border: 15px solid;
+  border-color: #99aab5 transparent transparent #99aab5;
+  transform: rotate(-45deg);
+  margin: 0px;
+}
+
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 4s linear infinite;
+          animation: slide 4s linear infinite;
+  margin: 0px;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+/*.delay3 {
+  -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+} */
+
+@-webkit-keyframes slide {
+  0% { opacity:0; transform: translateX(15vw); }
+  20% { opacity:.75; transform: translateX(9vw); }
+  50% { opacity:1; transform: translateX(0vw); }
+  80% { opacity:.75; transform: translateX(-9vw); }
+  100% { opacity:0; transform: translateX(-15vw); }
+}
+@keyframes slide {
+  0% { opacity:0; transform: translateX(15vw); }
+  20% { opacity:.75; transform: translateX(9vw); }
+  50% { opacity:1; transform: translateX(0vw); }
+  80% { opacity:.75; transform: translateX(-9vw); }
+  100% { opacity:0; transform: translateX(-15vw); }
 }

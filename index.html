@@ -3,21 +3,22 @@
 <html>
 <head>
 	<link rel="stylesheet" href="http://ecs.fullerton.edu/~cs332a44/stylesheets/default-style.css">
+	<!-- <link rel="stylesheet" href="stylesheets/default-style.css"> -->
 </head>
 
 <body>
 
 	<div id="main">
-		<h1>CPSC 332 PROJECT - University DB</h1>
-		<h3 style="margin: 5px;">By: Steven Duong, Jeffrey Lo, Angel Soto </h2>
+		<h1><a href="http://ecs.fullerton.edu/~cs332a44">CPSC 332 PROJECT - University DB</a></h1>
+		<h3 style="margin: 5px;">By: Duong Duong, Jeffrey Lo, Angel Soto </h2>
 	</div>
 
 	<div id="SideView">
 		<!-- Will add script to show/hide views if time allows otherwise, delete-->
 		<div id="Menu">
 			<ul>
-				<li><a href="#Admin">Professor Queries</a></li>
-				<li><a href="#Student">Student Queries</a></li>
+				<li><a id="profMenu" href="#Admin" onclick="showProfOptions()">Professor Queries</a></li>
+				<li><a id="studMenu" href="#Student" onclick="showStudentOptions()">Student Queries</a></li>
 				<li><a href="https://github.com/JeffyLo94/CPSC-332---PHP-SQL-Term-Project/blob/master/README.md" target="_blank">ReadMe</a></li>
 			</ul>
 		</div>
@@ -25,7 +26,24 @@
 
 	<div id="MainView">
 		<!-- NOTE: The forms in these sections are examples! -->
-		<h1>NOTE: These are examples - remove this later </h1>
+		<div id="Welcome">
+			<h1>Welcome</h1>
+			<p>Get started by selecting query use case</p>
+			<div id="arrowAnim">
+				<div class="arrowSliding">
+					<div class="arrow"></div>
+				</div>
+				<div class="arrowSliding delay1">
+					<div class="arrow"></div>
+				</div>
+				<div class="arrowSliding delay2">
+					<div class="arrow"></div>
+				</div>
+				<div class="arrowSliding delay3">
+					<div class="arrow"></div>
+				</div>
+			</div>
+		</div>
 		<!-- ADMIN SECITON -->
 		<div id="Admin">
 			<form action="php\profLookup.php" method="POST">
@@ -33,7 +51,7 @@
 						<h3>Admin/Professor Use</h4>
 
 						<b><br>Professor Lookup<br></b>
-						 <input type="text" name="pssn" placeholder="Enter Prof. SSN (no dashes):"/>
+						 <input type="text" name="professorSSN" placeholder="Enter Prof. SSN (no dashes):"/>
 						<input type="submit" />
 			</form>
 
@@ -47,24 +65,58 @@
 
 		<!-- STUDENT SECITON -->
 		<div id="Student">
-			<form action="php\studentLookup.php" method="POST">
-				<b><br>Student Lookup<br></b>
-				<input type="text" name="studentCWID" placeholder="Enter Student CWID" />
-				<input type="submit" />
-				</fieldset>
-			</form>
+			<fieldset>
+				<h3>Student Use</h4>
+				<form action="php\studentLookup.php" method="POST">
+						<b><br>Student Lookup<br></b>
+						<input type="text" name="studentCWID" placeholder="Enter Student CWID" />
+						<input type="submit" />
+				</form>
 
-			<form action="php\courseLookup.php" method="POST">
-					<fieldset>
-						<h3>Student Use</h4>
-
+				<form action="php\courseLookup.php" method="POST">
 						<b><br>Course Look-up<br></b>
 						<input type="text" name="courseNumber" placeholder="Enter Course #"/>
 						<input type="submit" />
-			</form>
+
+				</form>
+			</fieldset>
+
 		</div>
 
 	</div>
 </body>
+
+<script>
+	function showProfOptions() {
+		document.getElementById("Welcome").style.visibility = "hidden";
+		document.getElementById("Welcome").style.opacity = "0";
+		document.getElementById("Welcome").style.display = "none";
+		document.getElementById("Admin").style.visibility = "visible";
+		document.getElementById("Admin").style.opacity = "1";
+		document.getElementById("Admin").style.display = "block";
+		document.getElementById("Student").style.visibility = "hidden";
+		document.getElementById("Student").style.opacity = "0";
+		document.getElementById("Student").style.display = "none";
+
+		window.setTimeout(function () {
+			document.getElementById("profMenu").focus();
+		}, 0);
+	};
+	function showStudentOptions() {
+		document.getElementById("Welcome").style.visibility = "hidden";
+		document.getElementById("Welcome").style.opacity = "0";
+		document.getElementById("Welcome").style.display = "none";
+		document.getElementById("Admin").style.visibility = "hidden";
+		document.getElementById("Admin").style.opacity = "0";
+		document.getElementById("Admin").style.display = "none";
+		document.getElementById("Student").style.visibility = "visible";
+		document.getElementById("Student").style.opacity = "1";
+		document.getElementById("Student").style.display = "block";
+
+		window.setTimeout(function () {
+			document.getElementById("studMenu").focus();
+		}, 0);
+	};
+</script>
 
 </html>
