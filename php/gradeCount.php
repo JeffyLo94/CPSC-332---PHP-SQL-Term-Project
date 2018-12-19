@@ -1,14 +1,6 @@
-<!-- 
-gradeCount.php
-
-Author:
-
-Add php sql calls here:
--->
-<!-- 
+<!--
 gradeCount.php
 Author:Angel Soto
-Add php sql calls here:
 -->
 
 <html>
@@ -31,35 +23,48 @@ Add php sql calls here:
         $serverDB = mysql_connect('ecsmysql', SERVERID, PWD);
         if (!$serverDB) {
           die('Failed to connect: ' . mysql_error());
+        } elseif ($_POST["sectionNum"] == "" || $_POST["courseNum"] == "") {
+          die('No Course Number or Section Number Provided');
         }
         //echo 'Connected successfully<p>';
         mysql_select_db(SERVERID,$serverDB);
 
         //print header
-        echo "<h2 style='margin-left: 0px'>Grade Lookup</h2><BR>";
+        echo "<h2 style='margin-left: 0px'>Grade Count</h2><BR>";
+        echo "<h4>Course Number: " .$_POST["courseNum"], "</h4>";
+        echo "<h4>Section Number: " .$_POST["sectionNum"], "</h4>";
 
-       //table format
-        <div class="container">
-		<div class="row">
-		<div class="col-md-12">
-		<h2>Taking an account of how many students got each disticnct grade:</h2>
-		<table class='table table-bordered'>
-		<tr>
-		<th>Country</th><th>Number of authors</th>
-		</tr>
-		<?php
- 
-
-
-
-
-
-
-
-
-
-
-                // Close Database
+        $GradeQuery = "SELECT Grade, COUNT(*) as 'Count'
+                        FROM ENROLLMENT, COURSE, SECTION
+                        WHERE Course_Number = Section_Course_Number
+                        AND Enrollment_Course_Number = Course_Number
+                        AND Enrollment_Section_Number = Section_Number
+                        AND Section_Number = '".$_POST["sectionNum"]."'
+                        AND Course_Number = '".$_POST["courseNum"]."'
+                        GROUP BY Grade;";
+        $gradeCount = mysql_query($GradeQuery, $serverDB) or die(mysql_error());
+        $i=0;
+        if ($i<mysql_numrows($gradeCount)){
+        	//Print Courses
+        	echo "<div class ='query'>";
+          echo "<table id='gradeTable'>";
+          echo "<tr>";
+          echo "<th>Grade</th>";
+          echo "<th>Count</th>";
+          echo "</tr>";
+        	for($i=0; $i<mysql_numrows($gradeCount); $i++){
+            echo "<tr>";
+            echo "<td>", mysql_result($gradeCount, $i, Grade), "</td>";
+            echo "<td>", mysql_result($gradeCount, $i, Count), "</td>";
+            echo "</tr>";
+        	}
+          echo "</table>";
+        	echo "</div>";
+        }
+        else{
+        	echo "<span id='Error'>Error - Invalid", "<BR>", "No Courses Found", "<BR>", "</span";
+        }
+        //close databse
         mysql_close($serverDB);
       ?>
     </fieldset>

@@ -84,6 +84,11 @@ div{
   text-transform: uppercase;
 }
 
+#gradeTable{
+  width: 50vh;
+  text-align: justify;
+}
+
 ul{
   padding-left: 0px;
   list-style: none;
