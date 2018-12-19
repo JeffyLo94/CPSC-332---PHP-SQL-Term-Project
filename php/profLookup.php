@@ -36,7 +36,7 @@ Add php sql calls here:
         mysql_select_db(SERVERID,$serverDB);
         // Print Header
         echo "<h2 style='margin-left: 0px'>Professor Lookup</h2><BR>";
-        echo "<h4>Professor: ", "</h4>";
+        echo "<h4>Professor: " .$_POST["professorSSN"], "</h4>";
 
         $FindProf = "SELECT Professor_Title, Professor_Name, Classroom, Meeting_Days, Beg_Time, End_Time
         			FROM PROFESSOR, SECTION
@@ -44,14 +44,17 @@ Add php sql calls here:
         			AND Professor_SSN =" .$_POST["professorSSN"];
         $profResult = mysql_query($FindProf, $serverDB) or die(mysql_error());
         $i=0;
+        $count=0;
         if ($i<mysql_numrows($profResult)){
         	//Print  Prof Schedule
         	echo "<div class ='query'>";
+          echo "Name: ", mysql_result($profResult, $i, Professor_Title), " ", mysql_result($profResult, $i, Professor_Name), "<BR>";
+          echo "Total Courses Found: ", mysql_numrows($profResult), "<BR>", "<BR>";
         	for($i=0; $i<mysql_numrows($profResult); $i++){
-        		echo "Name: ", mysql_result($profResult, $i, Professor_Title), mysql_result($profResult, $i, Professor_Name), "<BR>";
-        		echo "Classrooms: ", mysql_result($profResult, $i, Classroom), "<BR>";
+            echo "Course " .++$count, "<BR>";
+            echo "Classrooms: ", mysql_result($profResult, $i, Classroom), "<BR>";
         		echo "Meeting Days: ", mysql_result($profResult, $i, Meeting_Days), "<BR>";
-        		echo "Times: ", mysql_result($profResult, $i, Beg_Time), mysql_result($profResult, $i, End_Time), "<BR>";
+        		echo "Times: ", mysql_result($profResult, $i, Beg_Time), " - ", mysql_result($profResult, $i, End_Time), "<BR>";
 
         		if($i<(mysql_numrows($profResult)-1)){
         			echo "<BR>";
