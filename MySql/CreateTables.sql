@@ -49,11 +49,11 @@ CREATE TABLE COURSE
 /* NOTE: this wasn't in the relational model, but is in the ER Schema */
 CREATE TABLE PREREQUISITE
 (
-	Parent_Course varchar(10) not null,
-	Child_Course  varchar(10) not null,
-	primary key(Parent_Course, Child_Course),
-	foreign key(Parent_Course) references COURSE(Course_Number),
-	foreign key(Child_Course) references COURSE(Course_Number)
+	Course_Id varchar(10) not null,
+	Prereq_Course  varchar(10) not null,
+	primary key(Course_Id, Prereq_Course),
+	foreign key(Course_Id) references COURSE(Course_Number),
+	foreign key(Prereq_Course) references COURSE(Course_Number)
 );
 
 CREATE TABLE STUDENT
@@ -81,7 +81,7 @@ CREATE TABLE SECTION
 (
 	Section_Number numeric(5) not null,
 	Section_Course_Number varchar(10) not null,
-	Section_Professor_SSN varchar(9) not null, /* Don't need a seperate PSSN teaches, since we already assigned a professor */
+	Section_Professor_SSN numeric(9) not null, /* Don't need a seperate PSSN teaches, since we already assigned a professor */
 	Classroom varchar(10) not null,
 	Meeting_Days char(7) not null,
 	Beg_Time varchar(10) not null,
