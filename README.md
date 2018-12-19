@@ -7,4 +7,4 @@ Fall 2018 - Term Project - Web database application implemented using PHP and My
 ### Group:
 * Steven Duong
 * Jeffrey Lo
-* Angel Soto
+* Angel Soto  
