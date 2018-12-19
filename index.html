@@ -2,7 +2,7 @@
 <!-- Created on 12/2018 by Jeffrey Lo, Steven Duong, Angel Soto -->
 <html>
 <head>
-	<link rel="stylesheet" href="stylesheets\default-style.css">
+	<link rel="stylesheet" href="http://ecs.fullerton.edu/~cs332a44/stylesheets/default-style.css">
 </head>
 
 <body>
@@ -16,8 +16,8 @@
 		<!-- Will add script to show/hide views if time allows otherwise, delete-->
 		<div id="Menu">
 			<ul>
-				<li><a href="#Admin">Professor Lookup</a></li>
-				<li><a href="#Student">Student Lookup</a></li>
+				<li><a href="#Admin">Professor Queries</a></li>
+				<li><a href="#Student">Student Queries</a></li>
 				<li><a href="https://github.com/JeffyLo94/CPSC-332---PHP-SQL-Term-Project/blob/master/README.md" target="_blank">ReadMe</a></li>
 			</ul>
 		</div>
@@ -47,6 +47,13 @@
 
 		<!-- STUDENT SECITON -->
 		<div id="Student">
+			<form action="php\studentLookup.php" method="POST">
+				<b><br>Student Lookup<br></b>
+				<input type="text" name="studentCWID" placeholder="Enter Student CWID" />
+				<input type="submit" />
+				</fieldset>
+			</form>
+
 			<form action="php\courseLookup.php" method="POST">
 					<fieldset>
 						<h3>Student Use</h4>
@@ -54,13 +61,6 @@
 						<b><br>Course Look-up<br></b>
 						<input type="text" name="courseNumber" placeholder="Enter Course #"/>
 						<input type="submit" />
-			</form>
-
-			<form action="php\studentLookup.php" method="POST">
-				<b><br>Student Record<br></b>
-				<input type="text" name="studentCWID" placeholder="Enter Student CWID" />
-				<input type="submit" />
-				</fieldset>
 			</form>
 		</div>
 
