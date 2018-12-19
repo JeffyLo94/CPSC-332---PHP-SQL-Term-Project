@@ -96,11 +96,11 @@ CREATE TABLE SECTION
 CREATE TABLE ENROLLMENT
 (
 	Enrollment_CWID numeric(10) not null,
-	Enrollment_Section_Number numeric(10) not null,
+	Enrollment_Section_Number numeric(5) not null,
 	Enrollment_Course_Number varchar(10) not null,
 	Grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
 	primary key(Enrollment_Section_Number, Enrollment_CWID, Enrollment_Course_Number),
-	foreign key(Enrollment_Section_Number) references SECTION(Section_Course_Number),
+	foreign key(Enrollment_Section_Number) references SECTION(Section_Number),
 	foreign key(Enrollment_CWID) references STUDENT(Student_CWID),
 	foreign key(Enrollment_Course_Number) references COURSE(Course_Number)
 );

@@ -21,23 +21,23 @@ INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (000000001, "BS Mathematics", "Xiamen University");
 
 /* Professor - Ryu */
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (000000002, "PhD Computer Science", "University of Houston");
 
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (000000002, "MS Computer Science", "University of Houston");
 
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (000000002, "BS Computer Science", "University of Houston");
 
 /* Professor - Barbara */
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (123456789, "PhD Computer Science", "Stanford University");
 
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (123456789, "MS Computer Science", "Stanford University");
 
-INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name)
+INSERT INTO DEGREE(Degree_Owner_SSN, Degree_Name, Degree_School)
 VALUES (123456789, "BA Mathematics", "UC Berkley");
 
 
@@ -65,7 +65,7 @@ VALUES (00002, "EGCP-311", "Technical Writing for Engineering", "Technical Writi
 
 /* Prerequisites */
 INSERT INTO PREREQUISITE(Course_Id, Prereq_Course)
-VALUES ("CPSC-332", "CPSC-131");
+VALUES ("CPSC-332", "EGCP-311");
 
 INSERT INTO PREREQUISITE(Course_Id, Prereq_Course)
 VALUES ("CPSC-335", "EGCP-311");
@@ -78,19 +78,19 @@ VALUES ("CPSC-481", "CPSC-335");
 
 
 /* SECTIONS */
-INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Start_Time, End_Time, Seats)
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (13321, "CPSC-332", 000000001, "E-202", "MW", "12:30pm", "1:45pm", 50);
 
-INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Start_Time, End_Time, Seats)
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (13322, "CPSC-332", 000000001, "CS-302", "MW", "2:30pm", "3:45pm", 30);
 
-INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Start_Time, End_Time, Seats)
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (13351, "CPSC-335", 000000002, "CS-110", "TTh", "10:00am", "11:15am", 40);
 
-INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Start_Time, End_Time, Seats)
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (14811, "CPSC-481", 000000002, "CS-110", "TTh", "11:30am", "12:15pm", 40);
 
-INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Start_Time, End_Time, Seats)
+INSERT INTO SECTION(Section_Number, Section_Course_Number, Section_Professor_SSN, Classroom, Meeting_Days, Beg_Time, End_Time, Seats)
 VALUES (23111, "EGCP-311", 123456789, "E-302", "TTh", "10:00am", "11:15am", 30);
 
 
@@ -128,23 +128,23 @@ VALUES (8888888888, "Tim", "Berners-Lee", "123 Nutwood Ave. Fullerton, CA 92831"
 
 
 /* CE Minors */
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00002, 1010101010);
 
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00002, 2222222222);
 
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00002, 1111111111);
 
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00002, 9494949494);
 
 /* CS Minors */
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00001, 8888888888);
 
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
+INSERT INTO MINOR(Minor_Dept, Minor_Student_CWID)
 VALUES (00001, 1234554321);
 
 
@@ -177,7 +177,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (1234512345, 14811, "CPSC-481", 'B');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1010101010, 13111, "EGCP-311", 'B+');
+VALUES (1010101010, 23111, "EGCP-311", 'B+');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (1010101010, 13351, "CPSC-335", 'B-');
@@ -186,7 +186,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (1010101010, 14811, "CPSC-481", 'C+');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (2222222222, 13111, "EGCP-311", 'D+');
+VALUES (2222222222, 23111, "EGCP-311", 'D+');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (2222222222, 13351, "CPSC-335", 'B');
@@ -195,7 +195,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (2222222222, 14811, "CPSC-481", 'A');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1111111111, 13111, "EGCP-311", 'C');
+VALUES (1111111111, 23111, "EGCP-311", 'C');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (1111111111, 13351, "CPSC-335", 'B-');
@@ -204,7 +204,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (1111111111, 14811, "CPSC-481", 'B+');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (8888888888, 13111, "EGCP-311", 'D');
+VALUES (8888888888, 23111, "EGCP-311", 'D');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (8888888888, 13322, "CPSC-332", 'C+');
@@ -213,7 +213,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (8888888888, 14811, "CPSC-481", 'A-');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1234567891, 13111, "EGCP-311", 'D');
+VALUES (1234567891, 23111, "EGCP-311", 'D');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (1234567891, 13322, "CPSC-332", 'B+');
@@ -222,7 +222,7 @@ INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Co
 VALUES (1234567891, 14811, "CPSC-481", 'A-');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1234554321, 13111, "EGCP-311", 'C');
+VALUES (1234554321, 23111, "EGCP-311", 'C');
 
 INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
 VALUES (1234554321, 13322, "CPSC-332", 'B-');
